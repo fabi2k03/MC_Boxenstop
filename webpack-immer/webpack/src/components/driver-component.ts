@@ -1,22 +1,22 @@
 import { html, render } from "lit-html"
 
 const template = html`
-    <div>User: Max Mustermann</div>
+    <div>Driver: Max Mustermann</div>
 `
 
-class UserComponent extends HTMLElement {
+class DriverComponent extends HTMLElement {
     static get observedAttributes() {
-        return ["id"]
+        return ["driverNumber"]
     }
     constructor() {
         super()
         this.attachShadow({mode: "open"})
     }
     attributeChangedCallback(name: string, oldValue: string, value: string) {
-        console.log("TODO: display user", value)
+        console.log("TODO: display driver", value)
     }
     connectedCallback() {
-        console.log("user connected")
+        console.log("driver connected")
         this.render()
     }
     private render() {
@@ -26,4 +26,4 @@ class UserComponent extends HTMLElement {
 
 }
 
-customElements.define("user-component", UserComponent)
+customElements.define("driver-component", DriverComponent)

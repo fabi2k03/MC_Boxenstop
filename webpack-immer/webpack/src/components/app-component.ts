@@ -1,10 +1,10 @@
 import {html, render} from "lit-html"
-import "./user-table-component"
-import "./user-component"
+import "./driver-table-component"
+import "./driver-component"
 
 const appComponentTemplate = html`
-    <user-table-component id="table"></user-table-component>
-    <user-component id="user"></user-component>
+    <driver-table-component id="table"></driver-table-component>
+    <driver-component id="driver"></driver-component>
 `
 
 class AppComponent extends HTMLElement {
@@ -19,14 +19,14 @@ class AppComponent extends HTMLElement {
     }
     render() {
         render(appComponentTemplate, this.shadowRoot)
-        const userTableComponent = this.shadowRoot.getElementById("table")
-        const userComponent: HTMLElement = this.shadowRoot.querySelector("user-component")
-        userTableComponent.addEventListener("user-selected", (e: CustomEvent) => {
-            const user = e.detail.user
-            console.log("user selected", user)
-            userComponent.setAttribute("id", user.id)
-            userTableComponent.style.display = "none"
-            userComponent.style.display = "block"
+        const driverTableComponent = this.shadowRoot.getElementById("table")
+        const driverComponent: HTMLElement = this.shadowRoot.querySelector("driver-component")
+        driverTableComponent.addEventListener("driver-selected", (e: CustomEvent) => {
+            const driver = e.detail.driver
+            console.log("driver selected", driver)
+            driverComponent.setAttribute("driverNumber", driver.driverNumber)
+            driverTableComponent.style.display = "none"
+            driverComponent.style.display = "block"
         })
     }
 }

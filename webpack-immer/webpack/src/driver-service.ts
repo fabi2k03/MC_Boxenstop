@@ -2,10 +2,10 @@
 import produce from "immer";
 import store from "./model/store"
 import { Driver } from "./model/driver";
-const url = "https://www.jsonkeeper.com/b/D2GL"
+const url = "https://www.jsonkeeper.com/b/Q0Z9"
 
-class UserService {
-    async fetchUsers() {
+class DriverService {
+    async fetchDrivers() {
         const response = await fetch(url)
         let drivers: [Driver] = await response.json()
         let nextState = produce(store.getValue(), draft => {
@@ -15,5 +15,5 @@ class UserService {
     }
 }
 
-const userService = new UserService()
-export default userService
+const driverService = new DriverService()
+export default driverService
