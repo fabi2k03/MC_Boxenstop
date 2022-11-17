@@ -1,15 +1,15 @@
 import {html, render} from "lit-html"
 
 import store from "../model/store"
-import { User } from "../model/user"
-import userService from "../user-service"
+import { Driver } from "../model/driver"
+import userService from "../driver-service"
 
 const tableTemplate = html`
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <table class="w3-table w3-striped w3-bordered">
         <thead>
             <tr>
-            <th>Id</th><th>Name</th>
+            <th>driverNumber</th><th>Name</th>
             </tr>
         </thead>
         <tbody></tbody>

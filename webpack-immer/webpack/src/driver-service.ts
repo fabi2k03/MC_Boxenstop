@@ -1,15 +1,15 @@
 
 import produce from "immer";
 import store from "./model/store"
-import { User } from "./model/user";
-const url = "https://jsonplaceholder.typicode.com/users"
+import { Driver } from "./model/driver";
+const url = "https://www.jsonkeeper.com/b/D2GL"
 
 class UserService {
     async fetchUsers() {
         const response = await fetch(url)
-        let users: [User] = await response.json()
+        let drivers: [Driver] = await response.json()
         let nextState = produce(store.getValue(), draft => {
-            draft.users = users
+            draft.drivers = drivers
         })
         store.next(nextState)
     }
