@@ -11,7 +11,7 @@ const driverComponentTemplate = (driver: Driver) => html`
 
 class DriverComponent extends HTMLElement {
     static get observedAttributes() {
-        return ["driverNumber"]
+        return ["drivernumber"]
     }
 
     driverNumber: string = "44"
@@ -31,7 +31,7 @@ class DriverComponent extends HTMLElement {
     }
     connectedCallback() {
         console.log("driver connected in driver component")
-        this.render()
+        
 
     }
     private render() {
