@@ -1,5 +1,6 @@
 import { html, render } from "lit-html"
 import { Driver } from "../model/driver"
+import store from "../model/store"
 
 const driverComponentTemplate = (driver: Driver) => html`
     <button id="backbutton">Back</button>
@@ -13,16 +14,16 @@ class DriverComponent extends HTMLElement {
         return ["driverNumber"]
     }
 
-    driverNumber: Driver
+    driverNumber: string = "44"
 
     private root: ShadowRoot
 
     constructor() {
         super()
-        this.attachShadow({mode: "open"})
+        this.root = this.attachShadow({ mode: "open" })
     }
 
-    attributeChangedCallback(name: string, oldValue: string, value: Driver) {
+    attributeChangedCallback(name: string, oldValue: string, value: string) {
         this.driverNumber = value
         console.log("Driver is here", this.driverNumber)
         this.render()
@@ -31,17 +32,21 @@ class DriverComponent extends HTMLElement {
     connectedCallback() {
         console.log("driver connected in driver component")
         this.render()
+
     }
     private render() {
-        let driver: Driver
+        let driver
         console.log("IM here")
-        driver = this.driverNumber
+        store.subscribe(model => {
+            driver = model.drivers.find(d => d.driverNumber.toString() == this.driverNumber);
+            console.log(driver)
+        });
         render(driverComponentTemplate(driver), this.root)
         this.root.getElementById("backbutton").onclick = () => {
             const event = new CustomEvent("back")
             this.dispatchEvent(event)
         }
-        
+
     }
 
 

@@ -24,7 +24,7 @@ class AppComponent extends HTMLElement {
         driverTableComponent.addEventListener("driver-selected", (e: CustomEvent) => {
             const driver = e.detail.driver
             console.log("driver selected", driver)
-            driverComponent.setAttribute("driverNumber", driver)
+            driverComponent.setAttribute("driverNumber", driver.driverNumber)
             driverTableComponent.style.display = "none"
             driverComponent.style.display = "block"
         })
