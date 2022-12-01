@@ -11,10 +11,10 @@ const driverComponentTemplate = (driver: Driver) => html`
 
 class DriverComponent extends HTMLElement {
     static get observedAttributes() {
-        return ["drivernumber"]
+        return ["drivernumber"]     //lowercase
     }
 
-    driverNumber: string = "44"
+    driverNumber: string = "33"
 
     private root: ShadowRoot
 
