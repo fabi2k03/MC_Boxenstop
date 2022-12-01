@@ -17,7 +17,7 @@ const tableTemplate = html`
 `
 const rowTemplate = (driver: Driver) => html`
     <td>${driver.driverNumber}</td><td>${driver.nameDriver}</td><td>${driver.birthDate}</td><td>${driver.nation}</td>
-    <td>${driver.team}</td><img src="${driver.picture}"</td>
+    <td>${driver.team}</td><td><img src="${driver.picture}"</td>
 `
 class DriverTableComponent extends HTMLElement {
 
@@ -27,13 +27,16 @@ class DriverTableComponent extends HTMLElement {
         this.root = this.attachShadow({ mode: "closed" })
     }
     async connectedCallback() {
-        store
-            .subscribe(model => this.render(model.drivers))
+        store.subscribe(model => this.render(model.drivers))
+        console.log("driver-table-component")
         driverService.fetchDrivers()
     }
+    
     private render(drivers: Driver[]) {
         render(tableTemplate, this.root)
+
         const body = this.root.querySelector("tbody")
+
         drivers.forEach(driver => {
             const row = body.insertRow()
             row.onclick = () => {

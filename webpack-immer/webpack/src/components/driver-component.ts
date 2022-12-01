@@ -30,7 +30,7 @@ class DriverComponent extends HTMLElement {
     }
     connectedCallback() {
         console.log("driver connected in driver component")
-        //this.render()
+        this.render()
     }
     private render() {
         let driver: Driver
