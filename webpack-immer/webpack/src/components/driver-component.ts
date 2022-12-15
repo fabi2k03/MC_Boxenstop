@@ -11,10 +11,10 @@ const driverComponentTemplate = (driver: Driver) => html`
 
 class DriverComponent extends HTMLElement {
     static get observedAttributes() {
-        return ["drivernumber"]
+        return ["drivernumber"]     //lowercase
     }
 
-    driverNumber: string = "44"
+    driverNumber: string = "33"
 
     private root: ShadowRoot
 
@@ -31,9 +31,9 @@ class DriverComponent extends HTMLElement {
     }
     connectedCallback() {
         console.log("driver connected in driver component")
-        
-
     }
+
+
     private render() {
         let driver
         console.log("IM here")
@@ -52,3 +52,5 @@ class DriverComponent extends HTMLElement {
 
 }
 customElements.define("driver-component", DriverComponent)
+
+
