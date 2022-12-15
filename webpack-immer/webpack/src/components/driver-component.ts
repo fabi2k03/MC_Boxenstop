@@ -7,7 +7,8 @@ const driverComponentTemplate = (driver: Driver) => html`
     <div>Number: ${driver.driverNumber}</div>
     <div>Name: ${driver.nameDriver}</div>
     <div>Team: ${driver.team}</div>
-    <div>Nation: ${driver.nation}</div>`
+    <div>Nation: ${driver.nation}</div>
+    <div><img src="${driver.picture}"</div>`
 
 class DriverComponent extends HTMLElement {
     static get observedAttributes() {
