@@ -14,6 +14,6 @@ class DriverService {
         store.next(nextState)
     }
 }
-//Trymacs
+
 const driverService = new DriverService()
 export default driverService
