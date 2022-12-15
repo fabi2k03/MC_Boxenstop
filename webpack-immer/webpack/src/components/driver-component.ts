@@ -45,6 +45,7 @@ class DriverComponent extends HTMLElement {
         render(driverComponentTemplate(driver), this.root)
         this.root.getElementById("backbutton").onclick = () => {
             const event = new CustomEvent("back")
+            console.log("BACK")
             this.dispatchEvent(event)
         }
 

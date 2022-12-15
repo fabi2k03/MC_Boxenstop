@@ -28,6 +28,12 @@ class AppComponent extends HTMLElement {
             driverTableComponent.style.display = "none"
             driverComponent.style.display = "block"
         })
+        driverComponent.addEventListener("back", (e: CustomEvent) => {
+           
+            //driverComponent.setAttribute("driverNumber", driver.driverNumber)
+            driverTableComponent.style.display = "block"
+            driverComponent.style.display = "none"
+        })
     }
 }
 
