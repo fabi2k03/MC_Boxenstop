@@ -5,5 +5,6 @@ export interface Driver {
     nation: string
     team: string,
     points: string,
-    picture: string
+    picture: string,
+    car: string
 }
