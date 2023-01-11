@@ -2,7 +2,7 @@
 import produce from "immer";
 import store from "./model/store"
 import { Driver } from "./model/driver";
-const url = /*"https://jsonkeeper.com/b/4TUU"*/ "https://www.jsonkeeper.com/b/Q0Z9" 
+const url = "https://www.jsonkeeper.com/b/Q0Z9" /*"https://jsonkeeper.com/b/SU0P"*/
 
 class DriverService {
     async fetchDrivers() {

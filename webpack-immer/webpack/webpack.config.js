@@ -23,7 +23,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Hello World"
+      title: "Boxenstop"
     })
   ],
   devtool: "cheap-source-map",
